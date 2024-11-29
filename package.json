@@ -1,0 +1,55 @@
+{
+  "name": "dash-project-maker-fr",
+  "version": "1.0.0",
+  "main": "main.js",
+  "description": "Dashboard Officiel de Project Maker",
+  "author": "project-maker.fr",
+  "license": "ISC",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "fr.projectmaker.dash",
+    "productName": "Dashboard PM",
+    "publish": {
+      "provider": "github",
+      "owner": "ProjectMakerfr",
+      "repo": "dash.project-maker.fr"
+    },
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "package.json"
+    ],
+    "protocols": [
+      {
+        "name": "Maille Protocol",
+        "schemes": ["maille"],
+        "role": "Viewer"
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "logo.ico"
+    }
+  },
+  "devDependencies": {
+    "electron": "^33.0.2",
+    "electron-builder": "^25.1.8"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/cli": "^6.1.2",
+    "@capacitor/core": "^6.1.2",
+    "electron-updater": "^6.3.9"
+  },
+  "keywords": []
+}
