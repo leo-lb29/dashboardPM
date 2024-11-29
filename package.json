@@ -11,6 +11,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "build": {
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
     "appId": "fr.projectmaker.dash",
     "productName": "Dashboard PM",
     "publish": {
@@ -29,7 +35,9 @@
     "protocols": [
       {
         "name": "Maille Protocol",
-        "schemes": ["maille"],
+        "schemes": [
+          "maille"
+        ],
         "role": "Viewer"
       }
     ],
